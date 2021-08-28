@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Rocord</title>
+    <link rel="stylesheet" href="employee.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Rocord</h2>
+        <input type="text" id="myInput" placeholder="Search here for SundayMobility emoloyees" onkeyup="myFunc()">
+    </div>
+
+        <table id="myTable">
+            <tr class="header">
+              <th>Name</th>
+              <th>Job Role</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>E-mail</th>
+              <th>Top Skills</th>
+              <th>Employee Rating</th>
+            </tr>
+            <tr>
+              <td>Veena Kale</td>
+              <td>Talent acquisition</td>
+              <td>21</td>
+              <td>Female</td>
+              <td>example001@gmail.com</td>
+              <td>Business Development</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Ramaswami Kumar</td>
+              <td>Senior Android Dev</td>
+              <td>26</td>
+              <td>Male</td>
+              <td>example001@gmail.com</td>
+              <td>Java</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Rohit Agre</td>
+              <td>Co-Founder</td>
+              <td>23</td>
+              <td>Male</td>
+              <td>example001@gmail.com</td>
+              <td>Node Js</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Ram</td>
+              <td>Full stack dev</td>
+              <td>26</td>
+              <td>Male</td>
+              <td>example001@gmail.com</td>
+              <td>JavaScript</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Shyam</td>
+              <td>DBMS</td>
+              <td>27</td>
+              <td>Male</td>
+              <td>example001@gmail.com</td>
+              <td>MySql</td>
+              <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>Jodu</td>
+              <td>Web dev</td>
+              <td>23</td>
+              <td>Male</td>
+              <td>example001@gmail.com</td>
+              <td>React Js</td>
+              <td>⭐⭐⭐⭐</td>
+            </tr>
+           
+          </table>
+   
+    <script>
+            function myFunc(){
+                 let search = document.getElementById('myInput').value.toUpperCase();
+                      let myTable = document.getElementById('myTable');
+                      let tr = myTable.getElementsByTagName('tr');
+
+                     for (var i=0; i<tr.length; i++){
+                         let td = tr[i].getElementsByTagName('td')[0];
+                             if(td){
+                                let textValue = td.textContent || td.innerHTML;
+                                 if(textValue.toUpperCase().indexOf(search) > -1){
+                                   tr[i].style.display = "";
+                                 } else{
+                                  tr[i].style.display = "none";
+                                       }
+                    }
+
+            }
+}
+    </script>
+</body>
+</html>
